@@ -47,16 +47,17 @@ npm install`
 
 ## Update the package.json file to include a postinstall command for Prisma generation:
 
-`
-"scripts": {
-"dev": "next dev",
-"build": "next build",
-"start": "next start",
-"lint": "next lint",
-"postinstall": "prisma generate"
-}
+```
+   "scripts": {
+   "dev": "next dev",
+   "build": "next build",
+   "start": "next start",
+   "lint": "next lint",
+   "postinstall": "prisma generate"
+   }
 
-`
+```
+
 Start the development server.
 
 Open your web browser and visit http://localhost:3000 to access the app.
