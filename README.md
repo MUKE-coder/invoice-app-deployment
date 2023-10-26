@@ -17,9 +17,9 @@ Welcome to the Invoice Generator App project! This app is designed to simplify t
 
 To run this project locally, follow these steps:
 
-1. Clone the repository to your local machine.
-   `git clone https://github.com/MUKE-coder/invoice-generator-app.git`
-2. Create a `.env` file in the project root directory and add the following keys (without values):
+1. Get the Source Code.
+   `Grab the Link from Video Description`
+2. Create a `.env` file in the project root directory and add the following keys:
 
    ```dotenv
    NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=
@@ -76,4 +76,5 @@ If you have any questions or feedback, feel free to contact us at your@email.com
 ---
 
 Thank you for supporting our project! Enjoy the Invoice Generator App and happy invoicing!
+
 # invoice-app-deployment
