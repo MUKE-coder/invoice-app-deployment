@@ -45,6 +45,59 @@ npm install`
 
 ## Modify the Prisma schema in the schema.prisma file to include the relationships between User, Invoice, and Row models.
 
+```
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+model Invoice {
+  id           Int      @id @default(autoincrement())
+  companyName  String
+  invoiceAuthor String
+  companyAddress String
+  companyCity   String
+  companyCountry String
+  clientCompany String
+  clientAddress String
+  clientCity    String
+  clientCountry String
+  invoiceNumber String
+  invoiceDate   DateTime
+  invoiceDueDate DateTime
+  notes         String
+  terms         String
+  logoUrl       String
+  tableData    Row[]   // Define a one-to-many relationship to Row
+   user    User     @relation(fields: [userId], references: [email])
+  userId  String
+}
+model Row {
+  id            Int       @id @default(autoincrement())
+  itemDescription String
+  qty            Int
+  unitPrice      Float
+  tax            Float
+  amount         Float
+  invoiceId      Int      // Define a foreign key relationship to Invoice
+  invoice        Invoice  @relation(fields: [invoiceId], references: [id])
+}
+model User {
+  id      Int      @id @default(autoincrement())
+  email   String   @unique
+  name    String?
+  password String
+  invoices   Invoice[]
+}
+
+```
+
 ## Update the package.json file to include a postinstall command for Prisma generation:
 
 ```
